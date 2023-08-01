@@ -1,0 +1,14 @@
+version: "3"
+services:
+  
+  backend:
+    image: plone/plone-backend:latest
+    environment:
+      SITE: Plone
+      CORS_ALLOW_ORIGIN: '*'
+    ports:
+      - 8080:8080
+    volumes:
+      - data:/data
+volumes:
+  data:
