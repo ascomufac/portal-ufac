@@ -81,7 +81,7 @@ omelette
 
 # build
 public/critical.css
-src/addons/*
+# src/addons/*
 /cache
 
 # yarn 3
