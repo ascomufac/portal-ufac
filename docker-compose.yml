@@ -42,7 +42,7 @@ services:
   frontend:
     image: 'myfrontend:latest'
     ports:
-      - '3000:3000'
+      - '3001:3000'
     restart: always
     environment:
       # These are needed in a Docker environment since the
