@@ -1,6 +1,58 @@
 version: "3"
 services:
-  
+  webserver:
+    image: traefik:v2.10
+
+    ports:
+      - 80:80
+
+    labels:
+      - traefik.enable=true
+      - traefik.constraint-label=public
+
+      # GENERIC MIDDLEWARES
+      # - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      # - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+      - traefik.http.middlewares.gzip.compress=true
+      - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg, font/woff2
+
+      # GENERIC ROUTERS
+      # - traefik.http.routers.generic-https-redirect.entrypoints=http
+      # - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
+      # - traefik.http.routers.generic-https-redirect.priority=1
+      # - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    command:
+      - --providers.docker
+      - --providers.docker.constraints=Label(`traefik.constraint-label`, `public`)
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.http.address=:80
+      # - --entrypoints.https.address=:443
+      - --accesslog
+      - --accesslog.format=json
+      - --accesslog.fields.headers.names.X-Varnish-Routed=keep
+      - --accesslog.fields.headers.names.RequestHost=keep
+      - --log
+      - --log.level=DEBUG
+      - --api
+      
+  frontend:
+    image: 'myfrontend:latest'
+    ports:
+      - '3000:3000'
+    restart: always
+    environment:
+      # These are needed in a Docker environment since the
+      # routing needs to be amended. You can point to the
+      # internal network alias.
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Plone
+    depends_on:
+      - backend
+
   backend:
     image: plone/plone-backend:latest
     environment:
