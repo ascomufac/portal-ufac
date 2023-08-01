@@ -12,29 +12,28 @@ Clone este repositório
 git clone git@github.com:plonegovbr/portal-brasil.git
 ```
 
-Instale as dependências de backend
+Instale as dependências 
 
 ```bash
-make install-backend
-```
-
-Instale as dependências de frontend
-
-```bash
-make install-frontend
+make install
 ```
 
 ## Inicie os servidores
 
-Inicie o servidor de backend
+Build do projeto
 
 ```bash
-make start-backend
+cd frontend
 ```
-Em outro terminal, inicie o servidor de frontend:
 
 ```bash
-make start-frontend
+docker build . -t myfrontend:latest -f Dockerfile
+```
+
+Inicie o docker compose para rodar 
+
+```bash
+sudo docker compose up -d
 ```
 
 ## Pacotes em desenvolvimento
