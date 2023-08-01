@@ -1842,9 +1842,9 @@ __metadata:
   linkType: hard
 
 "@eeacms/volto-widget-theme-picker@npm:*":
-  version: 1.1.1
-  resolution: "@eeacms/volto-widget-theme-picker@npm:1.1.1"
-  checksum: 744f7993ab5b75a1248da95d02142b6a5cf1db17fae69d779818863745f0e8d7ba3c070619e7a56401a2034b0648c268a7bcab6239b0510e27f0431d5b0ee8a4
+  version: 1.1.2
+  resolution: "@eeacms/volto-widget-theme-picker@npm:1.1.2"
+  checksum: f00d145c8de6aa2ab013e243d358616487ca3c2a3136bd2f494fc0095b920d934de189b1d624161fdc5adf8fb44eb687531a44adb93c8fa62cb814d701463ce8
   languageName: node
   linkType: hard
 
