@@ -20,15 +20,20 @@ make install
 
 ## Inicie os servidores
 
-Inicie o docker compose para o servidor de backend
+Build do projeto
+
+```bash
+cd frontend
+```
+
+```bash
+docker build . -t myfrontend:latest -f Dockerfile
+```
+
+Inicie o docker compose para rodar 
 
 ```bash
 sudo docker compose up -d
-```
-Em outro terminal, inicie o servidor de frontend:
-
-```bash
-make start-frontend
 ```
 
 ## Pacotes em desenvolvimento
