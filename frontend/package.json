@@ -27,11 +27,13 @@
   "theme": "@kitconcept/volto-light-theme",
   "workspaces": [
     "src/addons/volto-brasil-site",
-    "src/addons/volto-brasil-theme"
+    "src/addons/volto-brasil-theme",
+    "src/addons/volto-ufac-theme"
   ],
   "addons": [
     "@plonegovbr/volto-brasil-site",
-    "@plonegovbr/volto-brasil-theme"
+    "@plonegovbr/volto-brasil-theme",
+    "@ascomufac/volto-ufac-theme"
   ],
   "jest": {
     "modulePathIgnorePatterns": [

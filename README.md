@@ -20,15 +20,28 @@ make install
 
 ## Inicie os servidores
 
-Build do projeto
+Build do frontend/volto
 
 ```bash
 cd frontend
 ```
 
+para atualizar os addons
+
+```bash
+make develop
+```
+
+Gerar imagem do frontend
+
 ```bash
 docker build . -t myfrontend:latest -f Dockerfile
 ```
+
+volta a pasta raiz
+```bash
+cd ..
+``` 
 
 Inicie o docker compose para rodar 
 

@@ -12,5 +12,12 @@
     "https": "https://github.com/plonegovbr/volto-brasil-theme.git",
     "path": "src",
     "branch": "main"
+  },
+   "volto-ufac-theme": {
+    "package": "@ascomufac/volto-ufac-theme",
+    "url": "https://github.com/ascomufac/volto-ufac-theme.git",
+    "https": "https://github.com/ascomufac/volto-ufac-theme.git",
+    "path": "src",
+    "branch": "main"
   }
 }
