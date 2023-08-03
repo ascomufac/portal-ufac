@@ -62,8 +62,8 @@ services:
       # These are needed in a Docker environment since the
       # routing needs to be amended. You can point to the
       # internal network alias.
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/portal
-      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/portal
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Portal
+      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Portal
     depends_on:
       - backend
 
