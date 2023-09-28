@@ -1,15 +1,14 @@
 <div align="center"><img alt="logo" src="https://raw.githubusercontent.com/plonegovbr/plonegovbr.portal/main/docs/logo.png" width="150" /></div>
 
 <h1 align="center">PortalBrasil</h1>
+Projeto de FrontEnd do Portal da UFAC
 
-Projeto de desenvolvimento do Portal Brasil
-
-## Instalação
+## Como atualizar
 
 Clone este repositório
 
 ```bash
-git clone git@github.com:plonegovbr/portal-brasil.git
+git clone https://github.com/ascomufac/portal-ufac.git
 ```
 
 Instale as dependências 
@@ -18,43 +17,17 @@ Instale as dependências
 make install
 ```
 
-## Inicie os servidores
-
-Build do frontend/volto
-
-```bash
-cd frontend
-```
-
-para atualizar os addons
-
-```bash
-make develop
-```
-
-Gerar imagem do frontend
-
-```bash
-docker build . -t myfrontend:latest -f Dockerfile
-```
-
 volta a pasta raiz
 ```bash
 cd ..
 ``` 
+## Notas
 
-Inicie o docker compose para rodar 
+Gerar imagem do frontend
 
 ```bash
-sudo docker compose up -d
+sudo docker build . -t veridianobarroso/front-ufac:latest -f Dockerfile
 ```
-
-## Pacotes em desenvolvimento
-
-### Backend
-
-Edite o arquivo `backend/mx.ini` e adicione / edite os pacotes e rode `make install-backend` novamente.
-
-### Frontend
-
-Edite o arquivo `frontend/mrs.developer.json` e adicione / edite os pacotes e rode `make install-frontend` novamente.
+```bash
+sudo docker image push veridianobarroso/front-ufac
+```
