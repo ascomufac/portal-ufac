@@ -50,7 +50,7 @@ services:
       #service
       - traefik.http.services.plone-agencia.loadbalancer.server.port=3001
       # HOST: main
-      - traefik.http.routers.agencia.rule=Host(`plone.localhost`)
+      - traefik.http.routers.agencia.rule=Host(`agencia.localhost`)
       - traefik.http.routers.agencia.service=plone-agencia
       - traefik.http.routers.agencia.middlewares=gzip
     environment:
@@ -74,7 +74,7 @@ services:
       #service
       - traefik.http.services.plone-portal.loadbalancer.server.port=3000
       # HOST: main
-      - traefik.http.routers.portal.rule=Host(`plone.localhost`)
+      - traefik.http.routers.portal.rule=Host(`portal.localhost`)
       - traefik.http.routers.portal.service=plone-portal
       - traefik.http.routers.portal.middlewares=gzip
     environment:
