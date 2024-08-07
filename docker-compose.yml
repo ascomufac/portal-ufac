@@ -48,7 +48,7 @@ services:
     labels:
       - traefik.enable=true
       #service
-      - traefik.http.services.plone-agencia.loadbalancer.server.port=3000
+      - traefik.http.services.plone-agencia.loadbalancer.server.port=3001
       # HOST: main
       - traefik.http.routers.agencia.rule=Host(`plone.localhost`)
       - traefik.http.routers.agencia.service=plone-agencia
@@ -57,8 +57,8 @@ services:
       # These are needed in a Docker environment since the
       # routing needs to be amended. You can point to the
       # internal network alias.
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Agencia
-      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Agencia
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/agencia
+      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/agencia
     depends_on:
       - backend
     volumes:
@@ -81,8 +81,8 @@ services:
       # These are needed in a Docker environment since the
       # routing needs to be amended. You can point to the
       # internal network alias.
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Portal
-      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Portal
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/portal
+      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/portal
     depends_on:
       - backend
     volumes:
