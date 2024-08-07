@@ -38,34 +38,6 @@ services:
       - --log
       - --log.level=DEBUG
       - --api
-      
-  frontend:
-    image: 'veridianobarroso/front-ufac:latest'
-    ports:
-      - '3001:3000'
-    restart: always
-    environment:
-      # These are needed in a Docker environment since the
-      # routing needs to be amended. You can point to the
-      # internal network alias.
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Plone
-    depends_on:
-      - backend
-
-  portal:
-    image: 'veridianobarroso/front-ufac:latest'
-    ports:
-      - '3000:3000'
-    restart: always
-    environment:
-      # These are needed in a Docker environment since the
-      # routing needs to be amended. You can point to the
-      # internal network alias.
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Portal
-      RAZZLE_DEV_PROXY_API_PATH: http://backend:8080/Portal
-    depends_on:
-      - backend
 
   backend:
     image: plone/plone-backend:latest
